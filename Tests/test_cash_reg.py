@@ -33,22 +33,18 @@ def test_dollar_amt():                                                          
 #------TEST FOR ACCURATE DENOMINATION AMOUNTS------------------------------------------#
 def test_quarter_amt():                                                                #
     money_back = change.change_calculate("2.25, 3.00")                                 #
-    # denoms = change.change_denominations(money_back[0])                              #
     assert money_back == "3 quarters, "                                                #
 
 def test_coins_amt_00():                                                               #
     money_back = change.change_calculate("2.13, 3.00")                                 #
-    # denoms = change.change_denominations(money_back)                                 #
     assert money_back == "3 quarters, 1 dime, 2 pennies"                               #
 
 def test_coins_amt_01():                                                               #
     money_back = change.change_calculate("1.97, 2.00")                                 #
-    # denoms = change.change_denominations(money_back)                                 #
     assert money_back == "3 pennies"                                                   #
 
 @pytest.mark.skip(reason="This test will fail due to random value")                    #
 def test_coins_amt_02():                                                               #
     money_back = change.change_calculate("3.33, 5.00")                                 #
-    # denoms = change.change_denominations(money_back)                                 #
     assert money_back == "1 dollar, 2 quarters, 1 dime, 1 nickel, 2 pennies"           #
 #--------------------------------------------------------------------------------------#
